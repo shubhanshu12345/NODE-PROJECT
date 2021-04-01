@@ -7,4 +7,8 @@ console.log("ROUTER IS LOADED");
 
 router.get('/home',homeController.home);
 
+
+// ab /users/  ke aage kuch bhi vo isme jaake chalega
+router.use('/users',require('./users'));
+
 module.exports=router;

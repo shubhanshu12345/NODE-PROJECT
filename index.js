@@ -1,7 +1,13 @@
 const express=require("express");
 const app=express();
 const port=8000;
-app.use('/',require("./routes/index"))
+const path=require('path');
+
+app.use(express.static('./assets'));
+app.set('view engine','ejs');
+app.set('views',"./views");
+
+app.use('/',require("./routes/index"));
 
 app.listen(port,function(err){
     if(err){
