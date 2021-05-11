@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WELCOME <%= user.username %></title>
 </head>
 <body>
     <%- include('header'); %>
@@ -12,13 +12,6 @@
     <h3>USERNAME:<%= user.username %></h3>
     <h3>EMAIL:<%= user.email %></h3>
     <h3>PASSWORD:<%= user.password %></h3>
-    <section >
-        <form method="POST" action="/posts/create" >
-            <h1>POST</h1>
-            <textarea placeholder="TYPE HERE..." name="content"></textarea>
-            <input type="submit" value="POST">
-        </form>
-    </section>
     <%- include('footer'); %>
 </body>
 </html>

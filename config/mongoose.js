@@ -1,14 +1,16 @@
 const mongoose=require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/YourDB", {useNewUrlParser:true,useUnifiedTopology: true });
+const db="mongodb+srv://SHUBHU:Hitender123@cluster0.rfelb.mongodb.net/shubhudb?retryWrites=true&w=majority";
 
-const db = mongoose.connection;
-
-db.on('error', console.error.bind( 'connection error:'));
-
-db.once('open', function() {
- console.log("successful connected to db");
-});
-
+mongoose.connect(db,{
+    useNewUrlParser:true,
+    useCreateIndex:true,
+    useUnifiedTopology:true,
+    useFindAndModify:true
+}).then(()=> {
+    console.log("successful connected to db");
+}).catch((err)=>{
+    console.log("error");
+})
 
 module.exports=db;
